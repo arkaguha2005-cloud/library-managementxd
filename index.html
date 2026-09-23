@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Library Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>📚 Advanced Library Management System</h1>
+        
+        <div class="stats-container">
+            <div class="stat-box">Total Books: <span id="total-books">0</span></div>
+            <div class="stat-box available">Available: <span id="available-books">0</span></div>
+            <div class="stat-box borrowed">Borrowed: <span id="borrowed-books">0</span></div>
+            <div class="stat-box members">Total Members: <span id="total-members">0</span></div>
+        </div>
+
+        <div class="nav-tabs">
+            <button class="tab-btn active" data-target="books-section">Books Management</button>
+            <button class="tab-btn" data-target="members-section">Member Management</button>
+            <button class="tab-btn" data-target="issue-section">Issue / Return Book</button>
+        </div>
+
+        <div id="books-section" class="section active">
+            <h2>Add New Book</h2>
+            <form id="book-form">
+                <div class="form-group">
+                    <label for="title">Book Title</label>
+                    <input type="text" id="title" placeholder="Enter book title" required>
+                </div>
+                <div class="form-group">
+                    <label for="author">Author</label>
+                    <input type="text" id="author" placeholder="Enter author name" required>
+                </div>
+                <div class="form-group">
+                    <label for="genre">Genre</label>
+                    <input type="text" id="genre" placeholder="e.g., Sci-Fi, Mystery, Educational" required>
+                </div>
+                <div class="form-group">
+                    <label for="isbn">ISBN (Unique Number)</label>
+                    <input type="text" id="isbn" placeholder="Enter ISBN#" required>
+                </div>
+                <button type="submit" class="btn">Add Book</button>
+            </form>
+
+            <h2>Book Inventory</h2>
+            <table id="book-table">
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Author</th>
+                        <th>Genre</th>
+                        <th>ISBN</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="book-list">
+                </tbody>
+            </table>
+        </div>
+
+        <div id="members-section" class="section">
+            <h2>Register New Member</h2>
+            <form id="member-form">
+                <div class="form-group">
+                    <label for="member-name">Member Name</label>
+                    <input type="text" id="member-name" placeholder="Enter full name" required>
+                </div>
+                <div class="form-group">
+                    <label for="member-email">Email</label>
+                    <input type="email" id="member-email" placeholder="Enter email address" required>
+                </div>
+                <div class="form-group">
+                    <label for="member-phone">Phone Number</label>
+                    <input type="text" id="member-phone" placeholder="Enter phone number" required>
+                </div>
+                <button type="submit" class="btn">Add Member</button>
+            </form>
+
+            <h2>Registered Members</h2>
+            <table id="member-table">
+                <thead>
+                    <tr>
+                        <th>Member ID</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="member-list">
+                </tbody>
+            </table>
+        </div>
+
+        <div id="issue-section" class="section">
+            <h2>Issue a Book</h2>
+            <form id="issue-form">
+                <div class="form-group">
+                    <label for="select-book">Select Available Book</label>
+                    <select id="select-book" required>
+                        <option value="">-- Choose Book --</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="select-member">Select Member</label>
+                    <select id="select-member" required>
+                        <option value="">-- Choose Member --</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn">Issue Book</button>
+            </form>
+
+            <h2>Active Issued Books</h2>
+            <table id="issue-table">
+                <thead>
+                    <tr>
+                        <th>Book Title</th>
+                        <th>ISBN</th>
+                        <th>Issued To</th>
+                        <th>Issue Date</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="issue-list">
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
